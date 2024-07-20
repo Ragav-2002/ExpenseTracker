@@ -1,0 +1,52 @@
+.login{
+    background-color: rgb(4, 184, 255);
+    height: 100vh;
+    display: flex;
+    justify-content: space-around;
+    padding: 0px 250px ;
+    gap: 100px;
+    align-items: center;
+    .item{
+        background-color: rgba(0, 98, 255, 0.577);
+        height: 380px;
+        border-radius: 10px;
+        flex:1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        form{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            input{
+                background-color: white;
+                padding: 10px;
+                border: none;
+                outline: none;
+                border-radius: 5px;
+            }
+            button{
+                margin-left: 0;
+                width: 100%;
+                padding: 10px;
+                background: rgba(0, 234, 255, 0.533);
+                border: none;
+                outline: none;
+                color: white;
+                border-radius: 5px;
+                cursor: pointer;
+                &:disabled{
+                    cursor: wait;
+                }
+            }
+        }
+    }
+    .separator{
+        height: 80%;
+        width: 2px;
+        background-color: rgba(116, 162, 235, 0.577)
+    }
+}
