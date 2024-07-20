@@ -67,9 +67,9 @@ function ExpenseForm({ editingItem, setEditingItem }) {
       toast.error('Category name is required');
       return;
     }
-
     try {
       const res = await axios.post('create/cat', { name: newCategory });
+      console.log(res.data)
       addCategory(res.data);
       toast.success('Category added successfully');
       setNewCategory('');

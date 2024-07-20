@@ -1,7 +1,7 @@
 const _ = require('lodash')
 const jwt = require('jsonwebtoken')
 const bcrypt = require('bcrypt')
-const User = require('./models/user')
+const User = require('../models/user')
 const user = {}
 user.create = async(req, res) => {
     const body = _.pick(req.body, ['username', 'email', 'password'])

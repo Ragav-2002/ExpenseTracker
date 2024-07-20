@@ -1,5 +1,5 @@
 const _ = require('lodash')
-const Item = require('./models/item')
+const Item = require('../models/item')
 const item = {}
 item.create = async(req, res) => {
     const body = _.pick(req.body, ['name','amount','category','description', 'date'])

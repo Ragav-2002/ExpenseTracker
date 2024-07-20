@@ -1,4 +1,4 @@
-const Category = require("./models/cat")
+const Category = require("../models/cat")
 
 const cat = {}
 cat.create = async(req, res) => {

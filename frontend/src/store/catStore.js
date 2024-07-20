@@ -9,9 +9,7 @@ export const useCatStore = create((set, get) => ({
         try {
             if (localStorage.getItem('token')) {
                 const response = await axios.get('/get/cat');
-                console.log('Fetched categories:', response.data);
                 set({ category: response.data, isLoading: false });
-                console.log('Updated category state:', get().category); // Correct way to log updated state
             } else {
                 set({ category: [], isLoading: false });
             }
@@ -20,15 +18,22 @@ export const useCatStore = create((set, get) => ({
             toast.error(e.message);
         }
     },
-    addCategory: async (name) => {
+    addCategory: async (data) => {
         try {
-          const response = await axios.post('/create/cat', { name });
           set((state) => ({
-            category: [...state.category, response.data],
+            category: [...state.category, data],
           }));
           toast.success('Category Added Successfully');
         } catch (e) {
           toast.error(e.response?.data?.msg || e.message);
+        }
+    },
+    deleteItem: async(id)=>{
+        try{
+            set((state) => ({ category: state.category.filter(ele =>ele._id !== id)}));
+            toast.success('Category deleted Successfully');
+        }catch(e){
+            toast.error(e.response?.data?.msg || e.message);
         }
     }
 }));

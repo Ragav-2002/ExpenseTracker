@@ -55,8 +55,8 @@ function Login() {
 
         try {
             const user = await axios.post('/login', { email, password });
-            console.log(user);
             localStorage.setItem('token', user.data.token);
+            window.location.reload()
             fetchUserInfo();
             toast.success('Log In successful');
         } catch (e) {
