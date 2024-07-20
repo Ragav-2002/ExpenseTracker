@@ -69,7 +69,6 @@ function ExpenseForm({ editingItem, setEditingItem }) {
     }
     try {
       const res = await axios.post('create/cat', { name: newCategory });
-      console.log(res.data)
       addCategory(res.data);
       toast.success('Category added successfully');
       setNewCategory('');
